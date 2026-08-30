@@ -1,7 +1,13 @@
 __pycache__/
 *.pyc
 .env
+*.env
+config/*_password.txt
+config/secrets.yaml
 *.parquet
 spark-warehouse/
 .vscode/
 .idea/
+*.pem
+*.key
+.secrets/
