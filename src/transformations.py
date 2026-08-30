@@ -29,3 +29,9 @@ def segment_customers(df: DataFrame) -> DataFrame:
          .otherwise("Bronze")
     )
 
+
+
+# MLAPP-2000 ETL Refactoring Pipeline helper
+def pipeline_validate(df):
+    return df.isNotNull()
+
