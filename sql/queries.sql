@@ -15,6 +15,3 @@ FROM customer_segments
 GROUP BY segment
 ORDER BY customer_count DESC;
 
-
--- Temp test query on main
-SELECT 1;
