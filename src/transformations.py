@@ -29,3 +29,13 @@ def segment_customers(df: DataFrame) -> DataFrame:
          .otherwise("Bronze")
     )
 
+
+def get_customer_summary(df: DataFrame) -> DataFrame:
+    """Calculate summary statistics per customer."""
+    from pyspark.sql import functions as F
+    return df.groupBy("customer_id").agg(
+        F.count("*").alias("txn_count"),
+        F.avg("amount").alias("avg_spend")
+    )
+
+
