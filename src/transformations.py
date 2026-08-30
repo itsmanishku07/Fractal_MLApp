@@ -4,6 +4,8 @@ from pyspark.sql import DataFrame
  
 def clean_data(df: DataFrame) -> DataFrame:
     """Clean transaction data."""
+    # Add null check for customer_id
+    df = df.dropna(subset=['customer_id'])
     df = df.filter(df['amount'] > 0)
     return df
  
